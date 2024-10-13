@@ -1,0 +1,21 @@
+{% extends 'app/base.html' %} <!-- Utiliza o template base.html como base para este template -->
+
+{% block title %}Lista de Postagens{% endblock %} <!-- Define o título da página como "Lista de Postagens" -->
+
+{% block content %} <!-- Inicia o bloco de conteúdo específico desta página -->
+    <h2>Lista de Postagens</h2> <!-- Cabeçalho da página -->
+
+    <ul  class="bg-light text-center py-4"> <!-- Lista não ordenada para exibir as postagens -->
+        {% for post in posts %} <!-- Itera sobre todas as postagens passadas para o template -->
+            <li > <!-- Item da lista para cada postagem -->
+                <h3>{{ post.title }}</h3> <!-- Título da postagem -->
+                <p>{{ post.content|truncatewords:30 }}</p> <!-- Trecho do conteúdo da postagem, limitado a 30 palavras -->
+                <a href="{% url 'post_edit' post.pk %}">Editar</a> <!-- Link para editar a postagem -->
+                <a href="{% url 'post_delete' post.pk %}">Excluir</a> <!-- Link para excluir a postagem -->
+
+            </li>
+        {% empty %} <!-- Caso não haja postagens -->
+            <li>Não há postagens ainda.</li> <!-- Mensagem exibida se a lista de postagens estiver vazia -->
+        {% endfor %}
+    </ul>
+{% endblock %} <!-- Fim do bloco de conteúdo específico desta página -->

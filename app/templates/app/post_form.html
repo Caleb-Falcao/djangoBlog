@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %} <!-- Utiliza o template base.html como base para este template -->
+
+{% block title %}Criar/Editar Postagem{% endblock %} <!-- Define o título da página como "Criar/Editar Postagem" -->
+
+{% block content %} <!-- Inicia o bloco de conteúdo específico desta página -->
+    <h2>{% if form.instance.pk %}Editar{% else %}Criar{% endif %} Postagem</h2> <!-- Exibe "Editar Postagem" se a instância do formulário já existe (edição), ou "Criar Postagem" se for uma nova postagem -->
+
+    <form method="post"> <!-- Início do formulário com método POST -->
+        {% csrf_token %} <!-- Token CSRF para segurança contra ataques cross-site request forgery -->
+        {{ form.as_p }} <!-- Renderiza o formulário como parágrafos (HTML <p> tags) -->
+        <button type="submit">Salvar</button> <!-- Botão para submeter o formulário -->
+    </form>
+    <a href="{% url 'post_list' %}">Cancelar</a> <!-- Link para cancelar e voltar à lista de postagens -->
+{% endblock %} <!-- Fim do bloco de conteúdo específico desta página -->
