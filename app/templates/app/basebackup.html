@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Meu Blog{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+</head>
+<body>
+    {% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light flex-column align-items-start p-3">
+    <a class="navbar-brand" href="#">
+        <img src="{% static 'caleb.jpg' %}" class="rounded-circle" alt="Profile Picture" width="100" height="100">
+    </a> <!-- Nome do blog no menu de navegação -->
+    <div class="collapse navbar-collapse show" id="navbarNav">
+        <li class="nav-item d-flex">
+            <a class="nav-link mr-2" href="https://www.linkedin.com/in/seu-perfil" target="_blank">
+                <img src="{% static 'linkedin.png' %}" alt="LinkedIn" width="30" height="30">
+            </a> <!-- Ícone do LinkedIn -->
+            <a class="nav-link" href="https://github.com/seu-perfil" target="_blank">
+                <img src="{% static 'github.png' %}" alt="GitHub" width="30" height="30">
+            </a> <!-- Ícone do GitHub -->
+        </li>
+        <ul class="navbar-nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'post_list' %}">Ver Postagens</a> <!-- Link para ver postagens -->
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'post_create' %}">Criar Nova Postagem</a> <!-- Link para criar nova postagem -->
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="link/to/your/projects">Projetos</a> <!-- Link para seus projetos -->
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="link/to/your/education">Formação</a> <!-- Link para sua formação -->
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    
+    <div class="container mt-4">
+        {% block content %}{% endblock %} <!-- Bloco de conteúdo principal -->
+    </div>
+    <footer class="bg-light text-center py-4">
+        <p>&copy; 2024 Meu Blog</p> <!-- Rodapé da página -->
+    </footer>
+
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,8 +1,20 @@
 {% extends 'app/base.html' %} <!-- Extende o template base.html localizado na pasta app -->
 
-{% block title %}Página Inicial{% endblock %} <!-- Define o título da página para "Página Inicial", substituindo o bloco 'title' do template base -->
+{% block title %}Página Inicial{% endblock %}
+<!-- Define o título da página para "Página Inicial", substituindo o bloco 'title' do template base -->
 
 {% block content %} <!-- Início do bloco 'content' que será inserido na posição correspondente do template base -->
-    <h2>Esta é a página inicial do meu blog!</h2> <!-- Cabeçalho da página -->
-    <p>Explore as postagens e divirta-se.</p> <!-- Parágrafo com uma mensagem de boas-vindas -->
+<!--<h2>Esta é a página inicial do meu blog!</h2>  Cabeçalho da página
+    <p>Explore as postagens e divirta-se.</p> Parágrafo com uma mensagem de boas-vindas -->
+<div class="col-md-5 d-flex justify-content-center align-items-center flex-column">
+    <h2 class="text-white text-shadow">Caleb Falcão</h2>
+    <span id="subtitle" class="text-white text-shadow">Desenvolvedor Fullstack</span>
+</div>
+<div class="col-md-7 d-flex justify-content-end align-items-end">
+    <div id="arraste" class="d-flex align-items-center">
+        <i class="bi bi-arrow-down text-white pe-2 fs-2" aria-hidden="true"></i>
+        <a href="">Arraste para mais</a>
+    </div>
+    
+</div>
 {% endblock %} <!-- Fim do bloco 'content' -->
