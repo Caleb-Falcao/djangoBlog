@@ -1,2 +1,2 @@
-# crudDjango1
-CRUD Blog de postagem
+# CRUD DJANGO
+Blog de postagem
